@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         username: "Olga"
     }, {
         id: 2,
-        username: "Novak"
+        username: "Olga"
     }]);
 });
 
