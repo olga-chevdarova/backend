@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+    constructor() {
+        super();
+
+    }
     state = {users: []};
 
     componentDidMount() {
@@ -9,14 +13,24 @@ class App extends Component {
             .then(res => res.json())
             .then(users => this.setState({ users }));
     }
+
     fetchData() {
-        fetch('/', {
-            method: 'post',
-            headers: {'Content-Type':'application/json'},
-            body: {
-                "first_name": "Olga"
+        const myPost = {
+            title: 'A post about true facts',
+            body: '42',
+            userId: 2
+        };
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(myPost),
+            headers: {
+                'Content-Type': 'application/json'
             }
-        });
+        };
+        fetch('/', options)
+            .then(res => res.json())
+            .then(res => console.log(res));
     }
 
     render() {
