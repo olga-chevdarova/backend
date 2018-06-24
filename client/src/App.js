@@ -9,6 +9,15 @@ class App extends Component {
             .then(res => res.json())
             .then(users => this.setState({ users }));
     }
+    fetchData() {
+        fetch('/', {
+            method: 'post',
+            headers: {'Content-Type':'application/json'},
+            body: {
+                "first_name": "Olga"
+            }
+        });
+    }
 
     render() {
         return (
@@ -18,6 +27,8 @@ class App extends Component {
                 {this.state.users.map(user =>
                     <div key={user.id}>{user.username}</div>
                 )}
+
+                <button onClick={this.fetchData.bind(this)}>Load More</button>
             </div>
         );
     }
