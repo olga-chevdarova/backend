@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
     constructor() {
@@ -15,22 +16,18 @@ class App extends Component {
     }
 
     fetchData() {
-        const myPost = {
-            title: 'A post about true facts',
-            body: '42',
-            userId: 2
-        };
+        axios.post('https://morning-shore-34871.herokuapp.com/', {
+            userId: '1',
+            title: "Title",
+            completed: false
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
-        const options = {
-            method: 'POST',
-            body: JSON.stringify(myPost),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-        fetch('/', options)
-            .then(res => res.json())
-            .then(res => console.log(res));
     }
 
     render() {
