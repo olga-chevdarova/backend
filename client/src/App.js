@@ -10,36 +10,35 @@ class App extends Component {
     state = {users: []};
 
     componentDidMount() {
-        fetch('/users')
+        fetch('/new')
             .then(res => res.json())
             .then(users => this.setState({ users }));
     }
 
-    fetchData() {
-        axios.post('https://morning-shore-34871.herokuapp.com/', {
-            userId: '1',
-            title: "Title",
-            completed: false
-        })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+    iki() {
 
+        fetch('http://localhost:3001/artist', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify('Olga')
+        }).then(function(response) {
+            return response.json();
+        })
     }
+
 
     render() {
         return (
             <div className="App">
                 <h1>Users</h1>
-                <h2>bye</h2>
+                <h2>Bye</h2>
                 {this.state.users.map(user =>
-                    <div key={user.id}>{user.username}</div>
+                    <div key={user.id}>{user.task}</div>
                 )}
 
-                <button onClick={this.fetchData.bind(this)}>Load More</button>
+
             </div>
         );
     }
