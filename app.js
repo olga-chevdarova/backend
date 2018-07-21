@@ -51,7 +51,7 @@ app.use('/artist', artRouter);
 
 var towns = [{
     id: 1,
-    town: 'Kiev'
+    town: 'Rio'
 }, {
     id: 2,
     town: 'London'
