@@ -80,10 +80,10 @@ app.get('/new', function(req, res, next) {
 });
 
 app.post('/db', function(req, res) {
-    expName = 5;
+    expName = 15;
     console.log(req.body.aaa);
     res.sendStatus(req.body.aaa);
-    db.run("UPDATE duties SET status=?", [expName]);
+    db.run("UPDATE duties SET date=?", [expName]);
 });
 
 // catch 404 and forward to error handler

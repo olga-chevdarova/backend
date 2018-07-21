@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import $ from "jquery";
 
 class App extends Component {
     constructor() {
@@ -15,28 +16,40 @@ class App extends Component {
             .then(users => this.setState({ users }));
     }
 
-    iki() {
-
-        fetch('http://localhost:3001/artist', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
+    didf() {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "/db",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "cache-control": "no-cache",
+                "postman-token": "66594a9a-35ee-d674-5213-d99e31e6f3ae"
             },
-            body: JSON.stringify('Olga')
-        }).then(function(response) {
-            return response.json();
-        })
+            "processData": false,
+            "data": "{\"aaa\":333}"
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
     }
-
-
     render() {
         return (
             <div className="App">
                 <h1>Users</h1>
                 <h2>Bye</h2>
+
                 {this.state.users.map(user =>
-                    <div key={user.id}>{user.task}</div>
+                    <div>
+                        <div key={user.id}>{user.task}</div>
+                        <div>{user.date}</div>
+                        <button onClick={this.didf.bind(this)}>click</button>
+                    </div>
+
                 )}
+
 
 
             </div>
