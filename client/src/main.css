@@ -1,0 +1,121 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #121212;
+    line-height: 1.4em;
+    width: 100%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color:#333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+.container {
+    width:90%;
+    margin:0 auto;
+    padding-top: 2%;
+}
+
+
+button {
+    text-decoration: none;
+    border: 0;0em  -webkit-appearance: none;
+    border: 0;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:active {
+    outline: none ;
+    border: none ;
+}
+button:focus {outline:0;}
+a, a:focus, a:visited, a:hover, a:active {
+    outline: none;
+    text-decoration: none; }
+h2 {
+    margin-top: 0.5em;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+align-items: flex-start;
+
+}
+.flex-chart {
+align-self: flex-start;
+    width: 40%;
+
+    padding: 3%;
+padding-top: 0;
+
+}
+.flex-text {
+    width: 60%;
+    text-align: left;
+    padding-right: 5%;
+    background-color: white;
+}
+
+.flex-buttons {
+    justify-content: space-around;
+    padding: 0 0 1.5em;
+}
+.btn_wrap {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.btn_start {
+    padding: 0.7em 2em;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 0.3em;
+    transition: 0.3s all ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.btn_start:hover {
+
+    background-color: #1f8035;
+}
+
+.hide {
+    display: none;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.testing_chart {
+    width: 29%;
+}
+
+
+.testing_qustions{
+    width: 69%;
+}
+
+.points-box {
+    position: fixed;
+    opacity: 0.5;
+    top:calc(50% - 2em);
+    left:calc(50% - 2em);
+    background-color: green;
+padding: 2em;
+    display: none;
+}
+.points-box.show {
+    display: block;
+}
